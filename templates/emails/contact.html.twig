@@ -1,0 +1,12 @@
+{% apply inky_to_html %}
+    <container>
+        <row class="header">
+            <columns>
+                <spacer size="16"></spacer>
+                <h1 class="text-center">Bienvenu {{email.toName}} !</h1>
+            </columns>
+            {{mesage}}
+            
+        </row>
+    </container>
+{% endapply %}

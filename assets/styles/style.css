@@ -1,0 +1,100 @@
+body {
+    background-color: #72ff7b;
+    
+}
+
+a {
+    color: #15ad01;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+button {
+    border: #15ad01 1px;
+}
+
+
+.header_nav {
+    border-bottom: #15ad01 dashed 5px ;
+    background-color: #72ff7b;
+}
+
+.navbar-brand {
+    height: 53.3px;
+    width: 53.3px;
+}
+
+
+footer {
+    /* width: 100%;
+    position: absolute;
+    bottom: 0; */
+    border-top: #15ad01 dashed 5px ;
+    background-color: #72ff7b;
+}
+
+
+/* ##################################################################### */
+/* ############################## ACCUEIL ############################## */
+/* ##################################################################### */
+.grd {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+
+/* #accueiltitle {
+    position: absolute;
+    left: 2px;
+    top: 110px;
+    z-index: 50;
+    font-size: 12em;
+} */
+
+/* #landingimg {
+    padding-top: 5em;
+} */
+
+/* #landingimg img {
+    max-height: 542px;
+    max-width: 670px;
+}  */
+
+#accueilart {
+    font-size: 1.15em;
+}
+
+
+
+/* ##################################################################### */
+/* ############################# Formulare sign up and in ############################ */
+/* ##################################################################### */
+
+.conform {
+    width: 60%;
+    margin: auto;
+}
+
+.formUpIn .form-control {
+    background-color: #72ff7b;
+    border: 0;
+    border-bottom: #15ad01 dashed 5px;
+} 
+
+.formUpIn .form-control:active {
+    background-color: #72ff7b;
+
+}
+
+
+/* ##################################################################### */
+/* ############################## Trajets ############################## */
+/* ##################################################################### */
+
+
+

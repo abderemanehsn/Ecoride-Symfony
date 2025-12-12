@@ -1,0 +1,52 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+
+<main>
+
+    <div class="bg-light-subtle border border-3 border-success rounded p-4 conform mt-4 mb-2">
+
+            {{ form_errors(form) }}
+
+        <div class="h-75 conform mb-2">
+
+        <h1>Ajout d'un vehicule </h1>
+
+            {{ form_start(form) }}
+
+                <div class="row my-3">
+                    <div class="col">
+                        {{ form_row(form.model, {
+                            label: 'Model du vehicule'
+                        }) }}
+                    </div>
+                    <div class="col">
+                        {{ form_row(form.brand) }}
+
+                    </div>
+                </div>
+
+                {{ form_row(form.immatriculation) }}
+
+                <div class="row my-3">
+                    <div class="col">
+                        {{ form_row(form.firstImmatriculationAt, {
+                    label: 'Première immatriculation'
+                        }) }}
+                    </div>
+                    <div class="col-sm-7">
+                        {{ form_row(form.energy) }}
+                    </div>
+                    <div class="col">
+                        {{ form_row(form.color) }}
+                    </div>
+                </div>
+
+            {{ form_end(form) }}
+        </div>
+        
+    </div>
+</main>
+{% endblock %}

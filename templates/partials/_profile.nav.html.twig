@@ -1,0 +1,11 @@
+   <aside class="col-xl-3 vh-100 border rounded shadow p-3 m-2">
+                    <nav class="nav flex-column">
+                        <a class="nav-link active" aria-current="page" href="#"> Page profil</a>
+                        <a class="nav-link" href="{{ path('app_car') }}">  {% if cars is not null %} Ajouter un vehicule {% else %} Devenir conducteur
+                             {% endif %}  </a>
+                        <a class="nav-link" href="{{ path('app_profile_edit') }}">Modifier mes informations</a>
+                        {% if cars is not null %} 
+                            <a class="nav-link" href="{{ path('app_trip_new') }}"  > Ajouter un trajet</a>
+                        {% endif %}      
+                    </nav>
+  </aside>

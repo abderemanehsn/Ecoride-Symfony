@@ -1,0 +1,37 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Accueil EcoRIde{% endblock %}
+
+{% block content %}
+
+<main class="container-fluid pt-5">
+
+        {{ include('trip/_search.html.twig') }}
+
+        <section class="row">
+            <div class="col-md-7 ps-4">
+                <!-- <h1 id="accueiltitle" class=" fs-1 fw-bold text-white">EcoRide</h1> -->
+                <div id="landingimg" >
+                    <img class="img-fluid img-thumbnail" src="{{asset('img/Accueil_photo.png')}}" alt=" montage de quatre photos d'un homme souriant au volant, d'une Citroen c4, d'un usager en pleine conduite ainsi que d'une peugeuot travesant une foret">
+                </div>
+
+            </div>
+            <article id="accueilart" class="col-md-5 text-center d">
+                <h2 class="fs-2 py-4">Ensemble, Réduisons Notre Empreinte, Kilomètre après Kilomètre !</h2>
+                <p Class="text-wrap lh-lg py-2">
+                Fatigué(e) de voir vos trajets quotidiens peser lourd sur la planète et votre portefeuille ? EcoRide est la nouvelle startup française qui transforme vos déplacements en actions concrètes pour l'environnement. Notre mission est simple : faire du covoiturage la norme pour les trajets en voiture, en vous offrant une solution à la fois écologique et économique. En choisissant EcoRide, vous ne faites pas que partager un trajet, vous rejoignez une communauté de voyageurs engagés qui réduisent ensemble les émissions de CO2. C'est l'opportunité de diviser par deux votre budget essence et de vous positionner comme un acteur du changement. L'avenir de la mobilité passe par des choix conscients, et avec notre plateforme web intuitive, conçue avec soin par notre équipe technique, rendre vos déplacements plus verts n'a jamais été aussi facile. 
+                </p>
+            </article>
+        </section>
+
+    <div class="text-center my-4">
+    <a href="trajet.php" class="btn btn-success btn-lg py-2 " role="button">Trouver un covoiturage</a>
+    </div>
+
+</main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Nous contacter{% endblock %}
+
+{% block content %}
+
+
+<main>
+    <div class="bg-light-subtle border border-3 border-success rounded p-4 conform mt-4 mb-3" >
+
+
+            <h1>S'inscrire</h1>
+
+         
+        <fieldset>
+                <legend>Nous contacter</legend>
+            {{ form_start(contactForm) }}
+                {{ form_row(contactForm.name) }}
+                {{ form_row(contactForm.email) }}
+                {{ form_row(contactForm.message) }}
+                
+    
+        </fieldset>
+     {{ form_end(contactForm) }}
+
+    </div> 
+</main>
+{% endblock %}

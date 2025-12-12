@@ -1,0 +1,112 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Covoiturages{% endblock %}
+
+{% block content %}
+
+<main>
+
+    <h1 class="mt-2">Trouver un covoiturage</h1>
+
+    {% include "/trip/_search.html.twig" %}
+
+    <section class="row w-75 mx-auto">
+            <aside  class="bg-light-subtle col-sm-3 border border-3 border-success rounded mx-2">
+                <section id="filtre">
+                        <div class="aside-header mt-2">
+                            <h3>Trier par</h3>
+                        </div>
+                        {{ form_start(form, {'method': 'GET'}) }}
+                            <hr>
+                        <div class="note">
+                            <h4>Note (minimale)</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="Cinq">
+                                            <input  class="form-check-input" type="radio" id="Cinq" name="note" value="5">
+                                            Cinq
+                                        </label>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="Quatre">
+                                            <input  class="form-check-input" type="radio" id="Quatre" name="note" value="4">
+                                            Quatre
+                                        </label>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="form-check">
+                                        <label class="form-check-label" for="Trois">
+                                            <input  class="form-check-input" type="radio" id="Trois" name="note" value="3">
+                                            trois
+                                        </label>
+                                    </div>
+                                </li>
+                            
+                            </ul>
+                        </div>
+
+                    
+                        <div class="energy mb-3">
+                            <i class="bi bi-currency-dollar"></i>
+                        {{ form_widget(form.maxPrice, { attr: { class: 'form-control', placeholder: 'Prix max' } }) }}
+                        </div>
+
+                        <div class="price mb-3">
+                            <i class="bi bi-fuel-pump"></i>
+                        {{ form_widget(form.energy, { attr: { class: 'form-select' } }) }}
+                        </div>
+
+                            <button type="submit" class="col input-group btn btn-outline-success align-self-center mb-1">Filtrer</button>
+
+                        {{ form_end(form) }}
+                        <hr>
+                </section>
+            </aside>
+            <div id="vue" class="col-sm-8">
+                    <ul class="list-unstyled">
+                {% for trip in trips %}
+                
+                        <li class=" bg-light-subtle border border-3 border-success rounded my-2 shadow">
+                            <article class="p-2">
+
+                                <div class="d-flex justify-content-between">
+                                {{ trip.startDate ? trip.startDate|format_date( 'full', locale: 'fr') : '' }}
+                                <p><strong>H de départ : {{ trip.startingTime ? trip.startingTime|date('H:i:s') : '' }} <i class="bi bi-dash-lg"></i>H d'arrivée : {{ trip.endingTime ? trip.endingTime|date('H:i:s') : '' }} </strong> <br> Direction : {{ trip.destination }} </p>
+                                <p>A patir de : {{ trip.price }} <br> Crédits</p> 
+                                </div>
+                                <hr>
+
+                                <div class="d-flex">
+                                    <button class="btn btn-success px-2"> {% if trip.car.energy == 'ELECTRIC' %}<i class="bi bi-leaf"></i> {% else %}
+                                        <i class="bi bi-car-front"></i>{% endif %}
+                                    </button>
+                                    <p class="px-2"> {{trip.Driver.pseudo}} </p> <p class="px-2">Note <i class="bi bi-star"></i></p>
+                                    <a class="btn btn-outline-success ms-auto " href="{{ path('app_trip_show', {'id': trip.id}) }}" target="_blank">Details</a>
+                                </div>
+                            </article>
+                        </li>
+                {% else %}
+                    
+                        <li >
+                            <h2>
+                                Malheuresement aucun trajet ne correspond a ces paramètres
+                            </h2>
+                        </li>
+                    
+                {% endfor %}
+                </ul>
+            </div>
+
+    </section>
+        
+
+       
+
+</main>
+{% endblock %}

@@ -1,0 +1,38 @@
+
+ <section class="searchbar w-75 mx-auto">
+
+        {{ form_start(form, {'method': 'GET', 'action': action|default(path('app_trip_index'))}) }}
+        <div class=" input-group row g-3 my-3 ">
+
+                <div class="col input-group">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-circle"></i></span>
+                    {{ form_widget(form.startingPoint, { attr: { class: 'form-control' } }) }}
+                </div>
+
+                <div class="col input-group">
+                    <span class="input-group-text" id="basic-addon2"><i class="bi bi-circle-fill"></i></span>
+                    {{ form_widget(form.destination, { attr: { class: 'form-control' } }) }}
+                </div>
+
+        
+
+                <div class="col input-group">
+                    <span class="input-group-text" id="basic-addon3"><i class="bi bi-calendar"></i></span>
+                    {{ form_widget(form.startDate, { attr: { class: 'form-control' } }) }}
+                </div>
+
+                 <div class="col input-group">
+                    <span class="input-group-text" id="basic-addon4"><i class="bi bi-person-raised-hand"></i></span>
+                    {{ form_widget(form.places, { attr: { class: 'form-control' } }) }}
+                </div>
+
+                
+            <button type="submit" class="col input-group btn btn-success align-self-center mb-1">Chercher</button>
+        </div>
+
+        {{ form_end(form, {render_rest: false}) }}
+
+    
+ </section>
+
+

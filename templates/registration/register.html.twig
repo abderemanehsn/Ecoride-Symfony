@@ -1,0 +1,68 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+<main>
+
+  <div class="bg-light-subtle border border-3 border-success rounded p-4 conform mt-4 mb-2">
+
+        <h1>Bienvenue chez EcoRide</h1>
+
+        {{ form_errors(registrationForm) }}
+
+    <div class="conform mt-2 mb-2">
+        {{ form_start(registrationForm) }}
+
+        <div class="row my-3">
+            <div class="col">
+            {{ form_row(registrationForm.name) }}
+            </div>
+            <div class="col">
+                {{ form_row(registrationForm.lastname) }}
+            </div>
+        </div>
+
+        {{ form_row(registrationForm.email) }}
+
+        <div class="row my-5">
+            <div class="col-sm-8">
+            {{ form_row(registrationForm.pseudo) }}
+            </div>
+            <div class="col">
+                {{ form_row(registrationForm.number, {
+                    label: 'Numero de télephone'
+                }) }}
+            </div>
+        </div>
+            
+        <div class="row my-5">
+                <div class="col">
+                    {{ form_row(registrationForm.dob) }}
+                </div>
+                <div class="col-sm-8">
+                    {{ form_row(registrationForm.adress) }}
+                </div>
+        </div>
+
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe'
+            }) }}
+        
+        
+
+            {{ form_row(registrationForm.agreeTerms) }}
+
+        {#  <button type="submit" class="btn">Register</button> #}
+        {{ form_end(registrationForm) }}
+
+    </div>
+</div>
+
+</main>
+
+{% endblock %}

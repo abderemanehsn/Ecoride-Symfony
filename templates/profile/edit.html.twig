@@ -1,0 +1,63 @@
+ {% extends 'layout.html.twig' %}
+
+{% block title %}profil de {{user.pseudo}} {% endblock %}
+
+{% block content %}
+ 
+ <main>
+        <div class="bg-light-subtle border border-3 border-success rounded p-4 conform mt-4 mb-3">
+
+        <h3>Modification du profil</h3>
+
+            {{ form_errors(form) }}
+
+            {{ form_start(form) }}
+
+            <div class="row my-3">
+                <div class="col">
+                {{ form_row(form.name) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.lastName) }}
+                </div>
+            </div>
+
+            {{ form_row(form.email) }}
+
+            <div class="row my-5">
+                <div class="col-sm-8">
+                {{ form_row(form.pseudo) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.number, {
+                        label: 'Numero de télephone'
+                    }) }}
+                </div>
+            </div>
+                
+            <div class="row my-5">
+                    <div class="col">
+                        {{ form_row(form.dob) }}
+                    </div>
+                    <div class="col-sm-8">
+                        {{ form_row(form.adress) }}
+                    </div>
+            </div>
+
+                        {{ form_row(form.thumbnail) }}
+
+            <p class="text-end mt-3">
+                    <button class="btn btn-lg btn-success" type="submit">
+                            Modification
+                    </button>
+            </p>
+
+            {{ form_end(form) }}
+
+            <div class="text-end">
+                <a href="{{ path('app_forgot_password_request')}}"> Changer de mot de passe</a>
+            </div> 
+        </div>
+    </main>
+
+{% endblock %}

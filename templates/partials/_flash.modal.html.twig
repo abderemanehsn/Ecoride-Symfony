@@ -1,0 +1,33 @@
+
+
+{% if app.session.flashbag.peekAll()  %}
+
+<!-- Modal -->
+<div class='modalSession' id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Message de session</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="fermer"></button>
+      </div>
+      <div class="modal-body">
+        {% for type, message in app.flashes %}
+
+            {{message | join('. ')}}
+        
+        {% endfor %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    const modalSession = new bootstrap.Modal('modalSession');
+    modalSession.show
+</script>
+
+{% endif %}
+
