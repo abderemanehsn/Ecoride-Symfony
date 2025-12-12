@@ -1,5 +1,7 @@
 # Ecoride
 
+[Lien](https://trello.com/invite/b/68da39701af8ccd2436717d1/ATTI9a3b36a4064cd5c7b761512f1c30c42826D84174/ecoride-hassani-abderemane) du modèle kanban de gestion de projets (comprenant les maquettes et diagrammes )
+
 ## Contenue des dossier
 
 * le dossiers bdd.Ecoride contiens des fichier eponymes contenant structures et données  
@@ -81,9 +83,9 @@ symfony server:start
 - Pensez à configurer d'autres variables d'environnement (mailpit) dans `.env.local` si nécessaire.
 - Si vous rencontrez des erreurs liées aux migrations ou à la base de données, vérifiez la valeur de `DATABASE_URL` et les droits d'accès de l'utilisateur DB.
 
-- Exemple de trajets : 
+**Exemple de trajets : **
  * Marseille - Paris 25/12/2025 places restante 2
  * Aix - Marseille 22/12/2025 places restante 3
 
-- Exemple de user :
+**Exemple de user :**
  * MaximilienpegasUS@hotmail.com mdp : 12345678
