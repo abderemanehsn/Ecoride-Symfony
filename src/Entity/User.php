@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -22,6 +23,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
+
+     #[Assert\Email(
+
+      message: 'Veuiller entrez une adresse mail valide'
+
+    )]
+     #[Assert\NotBlank(
+
+      message: 'Veuiller entrez un mail '
+
+    )]
     #[ORM\Column(length: 180)]
     private ?string $email = null;
 
